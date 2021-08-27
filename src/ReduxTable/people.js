@@ -27,6 +27,8 @@ import TableBody from "@material-ui/core/TableBody";
 import Avatar from "@material-ui/core/Avatar";
 import TablePagination from "@material-ui/core/TablePagination";
 
+import { WorkerType_1 } from '../helpers/utilities'
+
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
@@ -71,7 +73,9 @@ const headCells = [
     label: "Name",
   },
   { id: "id", numeric: true, disablePadding: false, label: "ID" },
-  { id: "trips", numeric: true, disablePadding: false, label: "Trips" },
+  { id: "current-jobs", numeric: true, disablePadding: false, label: "Current Jobs" },
+  { id: "completed-jobs", numeric: true, disablePadding: false, label: "Completed Jobs" },
+  { id: "rating", numeric: true, disablePadding: false, label: "Rating" },
 ];
 
 function EnhancedTableHead(props) {
@@ -266,7 +270,7 @@ export default function People() {
                 startIcon={<AddIcon />}
                 onClick={open}
               >
-                Add Person
+                Add { WorkerType_1 }
               </Button>
             )}
           />
