@@ -19,7 +19,7 @@ import Icon from "@material-ui/core/Icon";
 import Avatar from "@material-ui/core/Avatar";
 import Badge from "@material-ui/core/Badge";
 import MailIcon from "@material-ui/icons/Mail";
-import PalettePicker from "../Theme/PalettePicker";
+// import PalettePicker from "../Theme/PalettePicker";
 
 import { BusinessName } from '../helpers/utilities'
 
@@ -66,7 +66,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function ResponsiveDrawer(props) {
-  const { container, setCurrentTheme, currentTheme } = props;
+  const { container } = props;
+  // const { container, setCurrentTheme, currentTheme } = props;
   const classes = useStyles();
   const theme = useTheme();
   const { pathname } = useLocation();

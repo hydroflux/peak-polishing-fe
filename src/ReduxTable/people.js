@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { add, remove, selectPeople, selectLoading } from "./peopleSlice";
+import { remove, selectPeople, selectLoading } from "./peopleSlice";
 import MuiAlert from "@material-ui/lab/Alert";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
@@ -8,7 +8,7 @@ import TableCell from "@material-ui/core/TableCell";
 import Checkbox from "@material-ui/core/Checkbox";
 import TableSortLabel from "@material-ui/core/TableSortLabel";
 import PropTypes from "prop-types";
-import { lighten, makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import { useHistory } from "react-router-dom";
 import Content from "../Dashboard/Content";
 import CircularProgress from "@material-ui/core/CircularProgress";
@@ -170,16 +170,16 @@ const useStyles = makeStyles((theme) => ({
 
 export default function People() {
   const classes = useStyles();
-  const [order, setOrder] = React.useState("asc");
-  const [orderBy, setOrderBy] = React.useState("calories");
-  const [selected, setSelected] = React.useState([]);
-  const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(25);
+  const [order, setOrder] = useState("asc");
+  const [orderBy, setOrderBy] = useState("calories");
+  const [selected, setSelected] = useState([]);
+  const [page, setPage] = useState(0);
+  const [rowsPerPage, setRowsPerPage] = useState(25);
   const rows = useSelector(selectPeople);
   const loading = useSelector(selectLoading);
   const error = false;
   // todo with snacks
-  const [snackOpen, setSnackOpen] = React.useState(false);
+  const [snackOpen, setSnackOpen] = useState(false);
   const dispatch = useDispatch();
 
   let history = useHistory();

@@ -8,7 +8,7 @@ export const currentDay = moment();
 
 let defaultData = {};
 
-let current = 0;
+// let current = 0;
 
 function addRandomExpense(data, setData) {
   return function () {
@@ -16,7 +16,7 @@ function addRandomExpense(data, setData) {
     const newMoney =
       Math.floor(Math.random() * 3000 - 1000) -
       Math.floor(Math.random() * 100) / 100;
-    current = newMoney;
+    // current = newMoney;
     const newData = {
       id: Math.floor(Math.random() * 1000),
       date: newDate,
@@ -33,11 +33,25 @@ function addRandomExpense(data, setData) {
   };
 }
 
-for (var i = 0; i < 12; i++) {
-  addRandomExpense(defaultData, (newData) => {
-    defaultData = newData;
-  })();
-}
+
+// Generate Random Expenses for the Dashboard Table
+// for (var i = 0; i < 12; i++) {
+//   addRandomExpense(defaultData, (newData) => {
+//     defaultData = newData;
+//   })();
+// } <== Unsafe: throwing an error
+addRandomExpense(defaultData, (newData) => defaultData = newData)()
+addRandomExpense(defaultData, (newData) => defaultData = newData)()
+addRandomExpense(defaultData, (newData) => defaultData = newData)()
+addRandomExpense(defaultData, (newData) => defaultData = newData)()
+addRandomExpense(defaultData, (newData) => defaultData = newData)()
+addRandomExpense(defaultData, (newData) => defaultData = newData)()
+addRandomExpense(defaultData, (newData) => defaultData = newData)()
+addRandomExpense(defaultData, (newData) => defaultData = newData)()
+addRandomExpense(defaultData, (newData) => defaultData = newData)()
+addRandomExpense(defaultData, (newData) => defaultData = newData)()
+addRandomExpense(defaultData, (newData) => defaultData = newData)()
+addRandomExpense(defaultData, (newData) => defaultData = newData)()
 
 export function DataProvider({ children }) {
   const [data, setData] = useState(defaultData);
