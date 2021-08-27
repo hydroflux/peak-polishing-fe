@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Title from "./Title";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -33,7 +33,7 @@ export default function Tools() {
   const classes = useStyles();
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Title>Manage your account</Title>
       <CardActionArea>
         <CardHeader
@@ -83,6 +83,6 @@ export default function Tools() {
           subheader="Have questions? Contact us here"
         />
       </CardActionArea>
-    </React.Fragment>
+    </Fragment>
   );
 }
