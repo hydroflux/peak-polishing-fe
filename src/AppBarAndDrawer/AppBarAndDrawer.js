@@ -20,6 +20,9 @@ import Avatar from "@material-ui/core/Avatar";
 import Badge from "@material-ui/core/Badge";
 import MailIcon from "@material-ui/icons/Mail";
 import PalettePicker from "../Theme/PalettePicker";
+
+import { BusinessName } from '../helpers/utilities'
+
 export const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -144,7 +147,7 @@ function ResponsiveDrawer(props) {
             component={RouterLink}
             className={classes.logo}
           >
-            Material World
+            { BusinessName }
           </Typography>
           <div style={{ flexGrow: 1 }}></div>
           <PalettePicker
