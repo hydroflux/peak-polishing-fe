@@ -150,10 +150,10 @@ function ResponsiveDrawer(props) {
             { BusinessName }
           </Typography>
           <div style={{ flexGrow: 1 }}></div>
-          <PalettePicker
+          {/* <PalettePicker
             setCurrentTheme={setCurrentTheme}
             currentTheme={currentTheme}
-          />
+          /> */}
           <Badge badgeContent={4} color="primary">
             <MailIcon />
           </Badge>
